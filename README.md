@@ -55,13 +55,7 @@ Para visualizar e interactuar con el proyecto, se puede visitar el enlace expues
 
     1. En la carpeta principal 'spacial-station' agregar un archivo 'proxy.conf.json' con el siguiente contenido:
 
-{
-  "/api/*":{
-    "target": "http://localhost:3000",
-    "secure": false,
-    "logLevel": "debug"
-   }
-}
+{ "/api/*": { "target": "http://localhost:3000", "secure": false, "logLevel": "debug" } }* 
  
     2. Editar el script 'start' del package.json de forma que quede "ng serve --proxi-conf proxy.conf.json"
     3. En el archivo angular.json dirigirse a projects -> spacial-station -> architect -> serve, en la propiedad 'options' (si no se encuentra, agregarla) agregar la propiedad 'proxyConfig' con el valor 'proxy.conf.json'.
