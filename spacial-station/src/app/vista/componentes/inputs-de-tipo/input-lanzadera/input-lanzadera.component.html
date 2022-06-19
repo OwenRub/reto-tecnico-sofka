@@ -1,0 +1,15 @@
+<label for="capacidad">Capadidad de carga</label>
+<input type="number" id="capacidad" [(ngModel)]="capacidadDeCarga">
+
+<label for="carga">Carga útil (Nave, Satélite, Sonda) </label>
+<input type="text" id="carga" [(ngModel)]="cargaUtil">
+
+<label for="carga">Posee carga</label>
+<select id="carga" [(ngModel)]="cargaSujeta">
+  <option value="si">Si</option>
+  <option value="no">No</option>
+</select>
+
+<label for="propulsores">Cantidad de propulsores</label>
+<input type="number" id="propulsores" [(ngModel)]="cantidadDePropulsores" (change)="agregarInformacion()">
+

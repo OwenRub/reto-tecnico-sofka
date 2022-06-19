@@ -1,0 +1,8 @@
+<label for="pasajeros">Capacidad de pasajeros</label>
+<input type="number" id="pasajeros" [(ngModel)]="capacidadPasajeros">
+
+<label for="proposito">Propósito (Mision, Investigacion, Mantenimiento)</label>
+<input type="text" id="proposito" [(ngModel)]="proposito">
+
+<label for="altitud">Altitud</label>
+<input type="number" id="altitud" [(ngModel)]="altitud" (change)="agregarInformacion()">

@@ -1,0 +1,14 @@
+<label for="objetivo">Ubicación objetivo</label>
+<input type="text" id="objetivo" [(ngModel)]="ubicacionObjetivo">
+
+<label for="opera">La nave está operando</label>
+<select id="opera" [(ngModel)]="enOperacion">
+  <option value="si">Si</option>
+  <option value="no">No</option>
+</select>
+
+<label for="altitud">Altitud</label>
+<input type="number" id="altitud" [(ngModel)]="altitud">
+
+<label for="orbita">Nivel de Orbita (Baja, Media, Alta)</label>
+<input type="text" id="orbita" [(ngModel)]="nivelDeOrbita" (change)="agregarInformacion()">
