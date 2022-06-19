@@ -50,14 +50,12 @@ Para visualizar e interactuar con el proyecto, se puede visitar el enlace expues
 
 1. Ejecutar los scripts para crear la base de datos con sus registros iniciales.
 2. Con la información de la conexión creada, editar el archivo backend/config/conexion.js agregando el host, user, password, port y el nombre de la base de datos.
-3. Editar el servicio de angular con la url correspondiente al endpoint local (http://localhost:3000/api).
+3. Editar el servicio _NaveService_ con la url correspondiente al endpoint local (http://localhost:3000/api).
 4. Si se generan errores en las peticiones debido a CORS policy (aunque esté haciendo uso del package cors), se debe configurar el proxy de la siguiente manera:
 
-    1. En la carpeta principal 'spacial-station' agregar un archivo 'proxy.conf.json' con el siguiente contenido:
-
-{ "/api/*": { "target": "http://localhost:3000", "secure": false, "logLevel": "debug" } }* 
- 
+    1. En la carpeta principal 'spacial-station' agregar un archivo 'proxy.conf.json' con el siguiente contenido: _{ "/api/*": { "target": "http://localhost:3000", "secure": false, "logLevel": "debug" } }_
     2. Editar el script 'start' del package.json de forma que quede "ng serve --proxi-conf proxy.conf.json"
     3. En el archivo angular.json dirigirse a projects -> spacial-station -> architect -> serve, en la propiedad 'options' (si no se encuentra, agregarla) agregar la propiedad 'proxyConfig' con el valor 'proxy.conf.json'.
+    4. En el servicio _NaveService_, editar la url del endpoint, removiendo _http://localhost:3000_ y dejando solo _/api_.
     
 Una vez seguidos estos pasos debería ser posible desplegar localmente el servidor y el cliente. Para desplegar el servidor debes dirigirte a la carpeta 'backend' y ejecutar desde la consola *node index.js*. Para desplegar el cliente, te puedes ubicar en la carpeta 'spacial-station' y ejecutar en consola el comando *ng serve -o*.
