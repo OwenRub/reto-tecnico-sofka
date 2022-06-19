@@ -1,0 +1,117 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+  font-family: 'Roboto', sans-serif;;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  column-gap: 30px;
+}
+
+.form{
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.form h2{
+  margin-bottom: 10px;
+}
+
+.card{
+  background-color: rgb(226, 247, 255);
+  padding: 16px; margin-bottom: 10px;
+  margin-bottom: 10px;
+  border-radius: 7px; border: 1px solid rgb(140, 182, 199);
+}
+.card > div{
+  display: grid; grid-template-columns: 40% 1fr;
+}
+.card span{
+  font-size: 16px; font-weight: 500;
+}
+.card h2{
+  margin-bottom: 8px; color: #6b6b6b;
+}
+.card p{
+  margin-bottom: 4px;
+}
+
+.mainTitle, .secondTitle, .form h2{
+  text-align: center;
+}
+.secondTitle{
+  color: #6b6b6b;
+  margin-bottom: 20px;
+}
+.secondTitle span{
+  color: orange;
+}
+
+.message{
+  margin: 10px 0;
+  color: rgb(109, 109, 109);
+}
+
+label{
+  display: block;
+  margin-top: 13px;
+  margin-bottom: 4px;
+}
+
+input[type="text"], input[type="number"]{
+  width: 100%; 
+  padding: 6px;
+  outline:none;
+  font-size: 16px;
+  border: 1px solid black;
+  transition: all 300ms ease-in-out;
+}
+input[type="text"]:focus, input[type="number"]:focus{
+  outline: none;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  border-bottom: 2px solid black;
+}
+
+.crear-btn{
+ border: 1px solid #002f86;
+ color: #002f86;
+ background-color: #ffa500;
+ padding: 10px; font-size: 15px;
+ border-radius: 5px; cursor: pointer;
+ font-weight: 600; margin-top: 10px;
+ transition: all 200ms;
+}
+.crear-btn:hover{
+  background-color: white;
+}
+
+.delete-btn{
+  border: 1px solid #7e0101;
+  color: #7e0101;
+  background-color: #fdb8b8;
+  padding: 8px; font-size: 14px;
+  border-radius: 5px; cursor: pointer;
+  font-weight: 500; margin-top: 8px;
+  transition: all 200ms;
+}
+.delete-btn:hover{
+  background-color: white;
+}
+
+select {
+  font-size: 16px;
+  padding: 5px;
+  min-width: 50%;
+}
+
+hr{
+  margin-top: 18px;
+  margin-bottom: 11px;
+}

@@ -1,0 +1,76 @@
+<form class="form" autocomplete="off" (ngSubmit)="crearNave()">
+
+  <h2>Crear Nave</h2>
+
+  <h3>Información Base</h3>
+
+  <label for="nombre">Nombre</label>
+  <input 
+    type="text"
+    id="nombre"
+    [(ngModel)]="naveInfo.nombre"
+    [ngModelOptions]="{standalone: true}"
+  >
+
+  <label for="peso">Peso</label>
+  <input 
+    type="number"
+    id="peso"
+    [(ngModel)]="naveInfo.peso"
+    [ngModelOptions]="{standalone: true}"
+  >
+
+  <label for="empuje">Empuje</label>
+  <input
+    type="number"
+    id="empuje"
+    [(ngModel)]="naveInfo.empuje"
+    [ngModelOptions]="{standalone: true}"
+  >
+
+  <label for="combustible">Combustible</label>
+  <input
+    type="text"
+    id="combustible"
+    [(ngModel)]="naveInfo.combustible"
+    [ngModelOptions]="{standalone: true}"
+  >
+
+  <label for="velMax">Velocidad Maxima</label>
+  <input
+    type="text"
+    id="velMax"
+    [(ngModel)]="naveInfo.velocidadMax"
+    [ngModelOptions]="{standalone: true}"
+  >
+
+  <label for="tipos">Tipo</label>
+  <select name="tipos" id="tipos" [(ngModel)]="naveInfo.tipo">
+    <option value="" selected>-- Selecciona una opción --</option>
+    <option value="Vehiculo Lanzadera">Vehículo Lanzadera</option>
+    <option value="Nave Tripulada">Nave Tripulada</option>
+    <option value="Sonda">Sonda</option>
+    <option value="Satelite Artificial">Satélite Artificial</option>
+  </select>
+
+  <hr>
+
+  <h3>Información adicional</h3>
+
+  <div *ngIf="!naveInfo.tipo">
+    <p class="message">Selecciona un tipo de nave...</p>
+  </div>
+  <div *ngIf="naveInfo.tipo === 'Vehiculo Lanzadera'">
+    <app-input-lanzadera (informacionAdicionalAgregada)="actualizarInformacion($event)"></app-input-lanzadera>
+  </div>
+  <div *ngIf="naveInfo.tipo === 'Nave Tripulada'">
+    <app-input-tripulada (informacionAdicionalAgregada)="actualizarInformacion($event)"></app-input-tripulada>
+  </div>
+  <div *ngIf="naveInfo.tipo === 'Sonda'">
+    <app-input-sonda (informacionAdicionalAgregada)="actualizarInformacion($event)"></app-input-sonda>
+  </div>
+  <div *ngIf="naveInfo.tipo === 'Satelite Artificial'">
+    <app-input-satelite (informacionAdicionalAgregada)="actualizarInformacion($event)"></app-input-satelite>
+  </div>
+  <button class="crear-btn" type="submit">Crear Nave</button>
+</form>

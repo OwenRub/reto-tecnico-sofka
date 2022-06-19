@@ -1,0 +1,19 @@
+<div class="form">  
+  <h2>Buscar Nave</h2>
+  <input 
+    type="text"
+    id="userInput"
+    placeholder="Nombre"
+    [(ngModel)]="userInput"
+    (input)="filtrarNaves()"
+  >
+
+  <label for="tipos">Entre</label>
+  <select id="tipos" [(ngModel)]="tipo" (change)="actualizarLista()">
+    <option value="todos" selected>Todos</option>
+    <option value="lanzadera">Vehiculo Lanzadera</option>
+    <option value="tripulada">Nave Tripulada</option>
+    <option value="sonda">Sonda</option>
+    <option value="satelite">Satelite Artificial</option>
+  </select>
+</div>

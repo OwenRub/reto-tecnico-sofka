@@ -1,0 +1,19 @@
+<h2 style="text-align: center; margin-bottom: 10px;">Listado de Naves</h2>
+<div *ngFor="let nave of naves">
+  <div class="card">
+      <h2>{{nave.getNombre}} <span>[{{nave.getTipo}}]</span></h2>
+    <div>
+      <div>
+        <p><b>Peso:</b> {{nave.getPeso}}</p>
+        <p><b>Empuje:</b> {{nave.getEmpuje}}</p>
+        <p><b>Combustible:</b> {{nave.getCombustible}}</p>
+        <p><b>Velocidad Máxima:</b> {{nave.getVelocidadMax}}</p>
+        <button class="delete-btn" (click)="eliminarNave(nave.getNombre, nave.getTipo)">Eliminar</button>
+      </div>
+      <div>
+        <p><b>Reporte:</b> {{nave.generarReporte()}}</p>
+        <p><b>Valor estimado: </b>{{nave.deducirValor() | currency}}</p>
+      </div>
+    </div>
+  </div>
+</div>
