@@ -54,7 +54,7 @@ Para visualizar e interactuar con el proyecto, se puede visitar el enlace expues
 4. Si se generan errores en las peticiones debido a CORS policy (aunque esté haciendo uso del package cors), se debe configurar el proxy de la siguiente manera:
 
     1. En la carpeta principal 'spacial-station' agregar un archivo 'proxy.conf.json' con el siguiente contenido: _{ "/api/*": { "target": "http://localhost:3000", "secure": false, "logLevel": "debug" } }_
-    2. Editar el script 'start' del package.json de forma que quede "ng serve --proxi-conf proxy.conf.json"
+    2. Editar el script 'start' del package.json de forma que quede "ng serve --proxy-conf proxy.conf.json"
     3. En el archivo angular.json dirigirse a projects -> spacial-station -> architect -> serve, en la propiedad 'options' (si no se encuentra, agregarla) agregar la propiedad 'proxyConfig' con el valor 'proxy.conf.json'.
     4. En el servicio _NaveService_, editar la url del endpoint, removiendo _http://localhost:3000_ y dejando solo _/api_.
     
